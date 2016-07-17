@@ -31,10 +31,10 @@ module GeoPlanet
 
       def get(url)
         RestClient.get(url)
-      rescue RestClient::RequestFailed
-        raise BadRequest, "appid, q filter or format invalid"
-      rescue RestClient::ResourceNotFound
-        raise NotFound, "woeid or URI invalid"
+      rescue RestClient::RequestFailed => e
+        raise BadRequest, "appid, q filter or format invalid (#{e.message})"
+      rescue RestClient::ResourceNotFound => e
+        raise NotFound, "woeid or URI invalid (#{e.message})"
       end
 
       protected
