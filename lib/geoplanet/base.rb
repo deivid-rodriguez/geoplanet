@@ -22,7 +22,7 @@ module GeoPlanet
         query_string = q && type ? "$and(#{q},#{type})" : "#{q}#{type}"
 
         matrix_params = matrix_params.any? ? ";#{matrix_params.map{|k,v| "#{k}=#{v}"}.join(';')}" : nil
-        query_params  = query_params.any? ? "?#{query_params.map{|k,v| "#{k}=#{v}"}.join('&')}" : nil
+        query_params  = query_params.any? ? "?#{query_params.to_query}" : nil
 
         query_string += "#{matrix_params}#{query_params}"
 
