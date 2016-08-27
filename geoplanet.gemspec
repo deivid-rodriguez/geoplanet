@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 		"lib/geoplanet/version.rb"
 	]
 
-  s.add_dependency("rest-client",   [">= 0.9"])
+  s.add_dependency("rest-client", ["~> 2.0"])
   s.add_dependency("json", [">= 1.1.3"])
 
   s.has_rdoc = false
